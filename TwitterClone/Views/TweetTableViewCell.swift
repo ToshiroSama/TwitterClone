@@ -92,6 +92,12 @@ class TweetTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        embedSubViews()
+        configureConstraints()
+        configureButtons()
+    }
+    
+    private func embedSubViews() {
         contentView.addSubview(avatarImageView)
         contentView.addSubview(displayName)
         contentView.addSubview(usernameLabel)
@@ -100,10 +106,6 @@ class TweetTableViewCell: UITableViewCell {
         contentView.addSubview(retweetButton)
         contentView.addSubview(likeButton)
         contentView.addSubview(shareButton)
-        
-        configureConstraints()
-        
-        configureButtons()
     }
     
     private func configureConstraints() {
